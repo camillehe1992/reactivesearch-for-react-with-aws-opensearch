@@ -60,6 +60,9 @@ apply: init
 quick-deploy:
 	make plan && cd terraform && terraform apply tfplan
 
+quick-destroy:
+	make plan-destroy && cd terraform && terraform apply tfplan
+
 import-data:
 	$(info [*] Import Sample Data)
 	ENDPOINT=$(shell terraform output dashboard_endpoint)

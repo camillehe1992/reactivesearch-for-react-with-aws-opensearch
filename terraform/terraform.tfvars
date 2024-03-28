@@ -1,12 +1,12 @@
 # General Deployment Variables
 environment = "prod"
-nickname    = "demo-opensearch"
+nickname    = "my-awesome-search-app"
 
 tags = {
   environment      = "prod"
-  nickname         = "demo-opensearch"
-  application_name = "Demo OpenSearch Application"
-  application_desc = "A sample for creating a search application with Amazon OpenSearch Service"
+  nickname         = "my-awesome-search-app"
+  application_name = "My Awesome Search App"
+  application_desc = "A search application powered by ReactiveSearch and OpenSearch"
   emails           = "group@example.com"
 }
 
@@ -18,4 +18,4 @@ instance_count   = 1
 local_ip_address = "124.193.176.86/32"
 
 # Amplify
-repository = "https://github.com/camillehe1992/aws-terraform-examples"
+repository = "https://github.com/camillehe1992/reactivesearch-for-react-with-aws-opensearch"
