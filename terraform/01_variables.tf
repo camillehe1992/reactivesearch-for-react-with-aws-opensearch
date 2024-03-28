@@ -62,11 +62,11 @@ variable "master_user_name" {
   default     = "master"
 }
 
-variable "master_user_password" {
-  type        = string
-  description = "The master password"
-  sensitive   = true
-}
+# variable "master_user_password" {
+#   type        = string
+#   description = "The master password"
+#   sensitive   = true
+# }
 
 variable "os_security_group_name" {
   type        = string
