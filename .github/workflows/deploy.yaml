@@ -50,6 +50,7 @@ jobs:
 
       # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
       - name: Terraform Init
+        working-directory: terraform
         run: |
           terraform init -reconfigure \
           -backend-config="bucket=$STATE_BUCKET" \
@@ -60,12 +61,14 @@ jobs:
       # An exit code of 0 indicated no changes, 1 a terraform failure, 2 there are pending changes.
       - name: Terraform Plan
         id: tf-plan
+        working-directory: terraform
         run: |
-          terraform plan -var-file $(pwd)/tf_$ENVIRONMENT.tfvars -no-color -out tfplan
+          terraform plan -var-file $(pwd)/terraform.tfvars -no-color -out tfplan
 
       # Create string output of Terraform Plan
       - name: Create String Output
         id: tf-plan-string
+        working-directory: terraform
         run: |
           TERRAFORM_PLAN=$(terraform show -no-color tfplan)
 
@@ -90,6 +93,7 @@ jobs:
       # Terraform Apply
       - name: Terraform Apply
         id: tf-apply-string
+        working-directory: terraform
         run: |
           TERRAFORM_OUTPUT=$(terraform apply -auto-approve tfplan -no-color)
 
