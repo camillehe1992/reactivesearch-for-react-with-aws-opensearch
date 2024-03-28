@@ -21,7 +21,8 @@ define DEFAULTS
 -var-file=$(VAR_FILE) \
 -var aws_profile=$(AWS_PROFILE) \
 -var aws_region=$(AWS_REGION) \
--var master_user_password=${MASTER_USER_PASSWORD} \
+-var master_user_password=$(MASTER_USER_PASSWORD) \
+-var access_token=$(PERSONAL_ACCESS_TOKEN) \
 -refresh=true
 endef
 
