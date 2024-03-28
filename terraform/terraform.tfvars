@@ -11,4 +11,11 @@ tags = {
 }
 
 # Project Specific Variables
-domain_name = "movies"
+# OpenSearch
+domain_name      = "movies"
+instance_type    = "t3.small.search"
+instance_count   = 1
+local_ip_address = "124.193.176.86/32"
+
+# Amplify
+repository = "https://github.com/camillehe1992/aws-terraform-examples"

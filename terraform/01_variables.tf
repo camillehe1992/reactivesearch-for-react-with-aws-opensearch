@@ -26,10 +26,11 @@ variable "tags" {
 }
 
 # Project Specific Variables
+
+# OpenSearch
 variable "domain_name" {
   type        = string
   description = "The OpenSearch domain name"
-  default     = "movies"
 }
 
 variable "engine_version" {
@@ -41,7 +42,6 @@ variable "engine_version" {
 variable "instance_type" {
   type        = string
   description = "The instance type of OpenSearch doamin"
-  default     = "t3.small.search"
 }
 
 variable "instance_count" {
@@ -66,7 +66,6 @@ variable "master_user_password" {
   type        = string
   description = "The master password"
   sensitive   = true
-
 }
 
 variable "os_security_group_name" {
@@ -78,5 +77,15 @@ variable "os_security_group_name" {
 variable "local_ip_address" {
   type        = string
   description = "My local IP address"
-  default     = "124.193.176.86/32"
+}
+
+# Amplify
+variable "repository" {
+  type        = string
+  description = "The repository for source code"
+}
+variable "access_token" {
+  type        = string
+  description = "The personal access token for authentication"
+  sensitive   = true
 }
