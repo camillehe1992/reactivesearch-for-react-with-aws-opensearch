@@ -14,7 +14,7 @@ env:
   AWS_ACCOUNT: ${{ vars.AWS_ACCOUNT }}
   AWS_REGION: ${{ vars.AWS_REGION }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  ENVIRONMENT: ${{ inputs.environment }}
+  ENVIRONMENT: prod
   NICKNAME: my-awesome-search-app
   TF_VERSION: 1.4.2
   STATE_BUCKET: ${{ vars.STATE_BUCKET }}
